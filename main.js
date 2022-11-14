@@ -17,10 +17,15 @@ let input = $('#myInput');
 let ul = $('<ul></ul>').appendTo(body);
 
 // Add a click listener on the <div> that takes in the text in the input box added earlier and add it to the <ul>
-myDiv.on('click', () => {
+myDiv.on('click', createNewLi);
 
+let bootButton = $('#bootstrap-button');
+bootButton.on('click', createNewLi);
+
+
+function createNewLi(){
     $(`<li>${input.val()}</li>`).appendTo(ul);
     input.val('');
     console.log('Div Cliked!');
     console.log(input.val());
-});
+}
